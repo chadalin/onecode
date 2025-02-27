@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/OSPanel/home/example.local/onecode/storage/logs/laravel.log</file>
+            <file>file:/C:/OSPanel/home/example.local/onecode/app/Providers/AppServiceProvider.php</file>
+            <file>file:/C:/OSPanel/home/example.local/onecode/resources/views/template/base.blade.php</file>
+            <file>file:/C:/OSPanel/home/example.local/onecode/resources/views/blog/index.blade.php</file>
+            <file>file:/C:/OSPanel/home/example.local/onecode/resources/views/includes/footer.blade.php</file>
+            <file>file:/C:/OSPanel/home/example.local/onecode/app/Http/Controllers/BlogController.php</file>
+            <file>file:/C:/OSPanel/home/example.local/onecode/app/helpers.php</file>
+            <file>file:/C:/OSPanel/home/example.local/onecode/resources/views/blog/show.blade.php</file>
+            <file>file:/C:/OSPanel/home/example.local/onecode/.env</file>
+            <file>file:/C:/OSPanel/home/example.local/onecode/routes/web.php</file>
+            <file>file:/C:/OSPanel/home/example.local/onecode/app/Http/Controllers/PostController.php</file>
+            <file>file:/C:/OSPanel/home/example.local/onecode/composer.json</file>
+            <file>file:/C:/OSPanel/home/example.local/onecode/resources/views/includes/header.blade.php</file>
+        </group>
+    </open-files>
+</project-private>
