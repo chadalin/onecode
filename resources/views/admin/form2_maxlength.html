@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    @@include('./layouts/head.html')
+    @@include('./layouts/head-bottom-link.html')
+</head>
+@@include('./layouts/main.html')
+<!-- [ Main Content ] start -->
+<section class="pcoded-main-container">
+    <div class="pcoded-wrapper">
+        <div class="pcoded-content">
+            <div class="pcoded-inner-content">
+                <div class="main-body">
+                    <div class="page-wrapper">
+                        <!-- [ breadcrumb ] start -->
+                        <div class="page-header">
+                            <div class="page-block">
+                                <div class="row align-items-center">
+                                    <div class="col-md-12">
+                                        <div class="page-header-title">
+                                            <h5 class="m-b-10">Maxlength</h5>
+                                        </div>
+                                        <ul class="breadcrumb">
+                                            <li class="breadcrumb-item"><a href="index.html"><i
+                                                        class="feather icon-home"></i></a></li>
+                                            <li class="breadcrumb-item"><a href="#!">Form Components</a></li>
+                                            <li class="breadcrumb-item"><a href="#!">Maxlength</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- [ breadcrumb ] end -->
+                        <!-- [ Main Content ] start -->
+                        <div class="row">
+                            <!-- [ Bootstrap maxlength ] start -->
+                            <div class="col-sm-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h5>bootstrap Maxlength</h5>
+                                        <span class="d-block m-t-5">Add class of <code>.form-control</code> with
+                                            <code>&lt;input&gt;</code> tag</span>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="mb-3 row">
+                                            <label class="col-form-label col-lg-3 col-sm-12 text-lg-end">Default</label>
+                                            <div class="col-lg-6 col-md-12 col-sm-12">
+                                                <input type="text" class="form-control"
+                                                    placeholder="Type your keywords..." maxlength="10">
+                                                <small>The badge will show up by default when the remaining chars are
+                                                    <code>10</code> or <code>less</code>:</small>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 row">
+                                            <label
+                                                class="col-form-label col-lg-3 col-sm-12 text-lg-end">Threshold</label>
+                                            <div class="col-lg-6 col-md-12 col-sm-12">
+                                                <input type="text" class="form-control thresold-i"
+                                                    placeholder="Type your keywords..." maxlength="20">
+                                                <small>Do you want the badge to show up when there are
+                                                    <code>20 chars</code> or less? Use the <code>threshold</code>
+                                                    option:</small>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 row">
+                                            <label
+                                                class="col-form-label col-lg-3 col-sm-12 text-lg-end">Color-Lables</label>
+                                            <div class="col-lg-6 col-md-12 col-sm-12">
+                                                <input type="text" class="form-control color-class"
+                                                    placeholder="Type your keywords..." maxlength="25">
+                                                <small>Just add <code>color-class</code>with <code>input</code></small>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 row">
+                                            <label class="col-form-label col-lg-3 col-sm-12 text-lg-end">Play with
+                                                Positions</label>
+                                            <div class="col-lg-6 col-md-12 col-sm-12">
+                                                <input type="text" class="form-control position-class"
+                                                    placeholder="Type your keywords..." maxlength="25">
+                                                <small>All you need to do is specify the <code>placement option</code>,
+                                                    with one of those strings. If none is specified, the positioning
+                                                    will be defauted to <code>'top-right'</code>.</small>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <label class="col-form-label col-lg-3 col-sm-12 text-lg-end">Also Working
+                                                with Textarea</label>
+                                            <div class="col-lg-6 col-md-12 col-sm-12">
+                                                <textarea class="form-control max-textarea" maxlength="255"
+                                                    rows="4"></textarea>
+                                                <small>Bootstrap maxlength supports textarea as well as inputs. Even on
+                                                    old IE.</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- [ Bootstrap maxlength ] end -->
+                        </div>
+                        <!-- [ Main Content ] end -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- [ Main Content ] end -->
+
+@@include('./layouts/footer.html')
+<!-- bootstrap-maxlength Js -->
+<script src="assets/plugins/bootstrap-maxlength/js/bootstrap-maxlength.min.js"></script>
+<script>
+    // [ defult length ]
+    $('input[maxlength]').maxlength();
+    // [ Threshold ]
+    $('input.thresold-i').maxlength({
+        threshold: 20
+    });
+    // [ Color-lables ]
+    $('input.color-class').maxlength({
+        alwaysShow: true,
+        threshold: 10,
+        warningClass: "label label-success",
+        limitReachedClass: "label label-danger"
+    });
+    // [ Play With Positions ]
+    $('input.position-class').maxlength({
+        alwaysShow: true,
+        placement: 'top-right'
+    });
+    // [ Working With Textarea ]
+    $('textarea.max-textarea').maxlength({
+        alwaysShow: true
+    });
+</script>
+@@include('./layouts/footer-bottom-link.html')
+</body>
+
+</html>

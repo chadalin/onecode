@@ -14,6 +14,12 @@ use App\Http\Middleware\TokenMiddleware;
 use App\Http\Controllers\Validation\ValidationController;
 use App\Http\Controllers\ValutaController;
 use App\Http\Controllers\Task\TaskController;
+use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\AdminStudentController;
+use App\Http\Controllers\ExcelImportController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\MasterController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -71,17 +77,16 @@ Route::put('posts/{post}/like',[PostController::class,'like'])->name('user.posts
 
 //КАБИНЕТ АДМИНА
 
-Route::prefix('admin')->middleware('auth','active','admin')->group(function(){
-    Route::redirect('/admin', '/admin/posts')->name('admin');
-Route::get('posts', [PostController::class,'index'])->name('admin.posts');
-Route::get('posts/create',[PostController::class,'create'])->name('admin.post.create');
-Route::post('posts',[PostController::class, 'store'])->name('admin.posts.store');
-Route::get('posts/{post}', [PostController::class,'show'])->name('admin.post.show');
-Route::get('posts/{post}/edit',[PostController::class,'edit'])->name('admin.post.edit');
-Route::put('posts/{post}',[PostController::class,'update'])->name('admin.post.update');
-Route::delete('posts/{post}',[PostController::class,'delete'])->name('admin.post.delete');
-Route::put('posts/{post}/like',[PostController::class,'like'])->name('admin.post.like');
-});
+
+Route::get('admin/', [AdminController::class,'index'])->name('admin.index');
+Route::get('admin/posts/create',[AdminController::class,'create'])->name('admin.post.create');
+Route::post('admin/posts',[AdminController::class, 'store'])->name('admin.posts.store');
+Route::get('admin/posts/{post}', [AdminControllerr::class,'show'])->name('admin.post.show');
+Route::get('admin/posts/{post}/edit',[AdminController::class,'edit'])->name('admin.post.edit');
+Route::put('admin/posts/{post}',[AdminController::class,'update'])->name('admin.post.update');
+Route::delete('admin/posts/{post}',[AdminController::class,'delete'])->name('admin.post.delete');
+Route::put('admin/posts/{post}/like',[AdminController::class,'like'])->name('admin.post.like');
+Route::get('admin/students',[AdminController::class,'students'])->name('admin.students');
 
 Route::get('login',[LoginController::class,'index'])->name('login');
 Route::post('login/store',[LoginController::class,'store'])->name('store');
@@ -110,3 +115,26 @@ Route::get('task/{task}/show',[TaskController::class,'show'])->name('task.show')
 Route::get('task/{task}/edit',[TaskController::class,'edit'])->name('task.edit');
 Route::patch('task/{task}/update',[TaskController::class,'update'])->name('task.update');
 Route::delete('task/{task}/delete',[TaskController::class,'delete'])->name('task.delete');
+
+
+
+Route::get('admin/student/test',[AdminStudentController::class,'test'])->name('admin.student.test');
+Route::get('admin/student',[AdminStudentController::class,'index'])->name('admin.student.index');
+Route::post('admin/student/store',[AdminStudentController::class,'store'])->name('admin.student.store');
+Route::get('admin/student/create',[AdminStudentController::class,'create'])->name('admin.student.create');
+Route::get('admin/student/{student}/',[AdminStudentController::class,'show'])->name('admin.student.show');
+Route::get('admin/student/{student}/edit',[AdminStudentController::class,'edit'])->name('admin.student.edit');
+Route::patch('admin/student/{student}/',[AdminStudentController::class,'update'])->name('admin.student.update');
+Route::delete('admin/student/{student}/delete',[AdminStudentController::class,'delete'])->name('admin.student.delete');
+
+Route::get('admin/import-excel', [ExcelImportController::class,'index'])->name('import.excel');
+Route::post('admin/import-excel', [ExcelImportController::class,'import']);
+
+Route::get('admin/', function () {
+    return redirect()->route('admin.products.index');
+});
+Route::resource('admin/products', ProductController::class)->except('show');
+Route::post('admin/products/store', [ProductController::class,'store'])->name('admin.products.store');
+Route::get('admin/products/import/index', [MasterController::class, 'importProductIndex'])->name('importProductIndex');
+Route::post('admin/products/import', [MasterController::class, 'importProduct'])->name('importProduct');
+Route::get('admin/products/export', [MasterController::class, 'exportProduct'])->name('exportProduct');

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    @@include('./layouts/head.html')
+
+    <!-- material datetimepicker css -->
+    <link rel="stylesheet" href="assets/plugins/material-datetimepicker/css/bootstrap-material-datetimepicker.css">
+    <!-- Bootstrap datetimepicker css -->
+    <link rel="stylesheet" href="assets/plugins/bootstrap-datetimepicker/css/bootstrap-datepicker3.min.css">
+    <link rel="stylesheet" href="assets/fonts/material/css/materialdesignicons.min.css">
+    <!-- minicolors css -->
+    <link rel="stylesheet" href="assets/plugins/mini-color/css/jquery.minicolors.css">
+
+    @@include('./layouts/head-bottom-link.html')
+
+</head>
+
+@@include('./layouts/main.html')
+
+<!-- [ Main Content ] start -->
+<section class="pcoded-main-container">
+    <div class="pcoded-wrapper">
+        <div class="pcoded-content">
+            <div class="pcoded-inner-content">
+                <div class="main-body">
+                    <div class="page-wrapper">
+                        <!-- [ breadcrumb ] start -->
+                        <div class="page-header">
+                            <div class="page-block">
+                                <div class="row align-items-center">
+                                    <div class="col-md-12">
+                                        <div class="page-header-title">
+                                            <h5 class="m-b-10">Material Datetimepicker</h5>
+                                        </div>
+                                        <ul class="breadcrumb">
+                                            <li class="breadcrumb-item"><a href="index.html"><i
+                                                        class="feather icon-home"></i></a></li>
+                                            <li class="breadcrumb-item"><a href="#!">Form Components</a></li>
+                                            <li class="breadcrumb-item"><a href="#!">Material Datetimepicker</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- [ breadcrumb ] end -->
+                        <!-- [ Main Content ] start -->
+                        <div class="row">
+                            <!-- [  datetimepicker ] start -->
+                            <div class="col-sm-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h5>Material Datetimepicker</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="mb-3 row">
+                                            <label class="col-form-label col-lg-3 col-sm-12 text-lg-end">Date
+                                                Picker</label>
+                                            <div class="col-lg-6 col-md-12 col-sm-12">
+                                                <input type="text" id="date" class="form-control" placeholder="Date">
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 row">
+                                            <label class="col-form-label col-lg-3 col-sm-12 text-lg-end">Time
+                                                Picker</label>
+                                            <div class="col-lg-6 col-md-12 col-sm-12">
+                                                <input type="text" id="time" class="form-control" placeholder="Time">
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 row">
+                                            <label class="col-form-label col-lg-3 col-sm-12 text-lg-end">Date Time
+                                                Picker</label>
+                                            <div class="col-lg-6 col-md-12 col-sm-12">
+                                                <input type="text" id="date-format" class="form-control"
+                                                    placeholder="Begin Date Time">
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 row">
+                                            <label class="col-form-label col-lg-3 col-sm-12 text-lg-end">French Locales
+                                                (Week starts at Monday)</label>
+                                            <div class="col-lg-6 col-md-12 col-sm-12">
+                                                <input type="text" id="date-fr" class="form-control"
+                                                    value="18/03/2015 08:00" placeholder="Date de début">
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 row">
+                                            <label class="col-form-label col-lg-3 col-sm-12 text-lg-end">Min Date
+                                                Set</label>
+                                            <div class="col-lg-6 col-md-12 col-sm-12">
+                                                <input type="text" id="min-date" class="form-control"
+                                                    placeholder="Start Date">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <label class="col-form-label col-lg-3 col-sm-12 text-lg-end">Events</label>
+                                            <div class="col-lg-6 col-md-12 col-sm-12">
+                                                <div class="row">
+                                                    <div class="col-sm-6 mb-1">
+                                                        <input type="text" id="date-start" class="form-control"
+                                                            placeholder="Start Date">
+                                                    </div>
+                                                    <div class="col-sm-6 mb-1">
+                                                        <input type="text" id="date-end" class="form-control"
+                                                            placeholder="End Date">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- [  datetimepicker ] end -->
+                        </div>
+                        <!-- [ Main Content ] end -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- [ Main Content ] end -->
+
+@@include('./layouts/footer.html')
+
+<!-- material datetimepicker Js -->
+<script src="http://momentjs.com/downloads/moment-with-locales.min.js"></script>
+<script src="assets/plugins/material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
+<script>
+    // [ date picker ]
+    $('#date').bootstrapMaterialDatePicker({
+        weekStart: 0,
+        time: false
+    });
+    // [ time picker ]
+    $('#time').bootstrapMaterialDatePicker({
+        date: false,
+        format: 'HH:mm'
+    });
+    // [ date-format picker ]
+    $('#date-format').bootstrapMaterialDatePicker({
+        format: 'dddd DD MMMM YYYY - HH:mm'
+    });
+    // [ date-fr picker ]
+    $('#date-fr').bootstrapMaterialDatePicker({
+        format: 'DD/MM/YYYY HH:mm',
+        lang: 'fr',
+        weekStart: 1,
+        cancelText: 'ANNULER'
+    });
+    // [ min-date picker ]
+    $('#min-date').bootstrapMaterialDatePicker({
+        format: 'DD/MM/YYYY HH:mm',
+        minDate: new Date()
+    });
+    // [ date-end picker ]
+    $('#date-end').bootstrapMaterialDatePicker({
+        weekStart: 0,
+        format: 'dddd DD MMMM YYYY - HH:mm'
+    });
+    // [ date-start picker ]
+    $('#date-start').bootstrapMaterialDatePicker({
+        weekStart: 0,
+        format: 'dddd DD MMMM YYYY - HH:mm'
+    }).on('change', function (e, date) {
+        $('#date-end').bootstrapMaterialDatePicker('setMinDate', date);
+    });
+</script>
+
+@@include('./layouts/footer-bottom-link.html')
+
+</body>
+
+</html>

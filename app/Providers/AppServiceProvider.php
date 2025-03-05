@@ -20,5 +20,6 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
        //View::share('date',date('Y'));
+       \Illuminate\Pagination\Paginator::useBootstrap();
     }
 }

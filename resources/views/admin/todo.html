@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    @@include('./layouts/head.html')
+    @@include('./layouts/head-bottom-link.html')
+
+    <!-- page css -->
+    <link rel="stylesheet" href="assets/css/pages/pages.css">
+
+</head>
+
+@@include('./layouts/main.html')
+
+<!-- [ Main Content ] start -->
+<section class="pcoded-main-container">
+    <div class="pcoded-wrapper">
+        <div class="pcoded-content">
+            <div class="pcoded-inner-content">
+                <div class="main-body">
+                    <div class="page-wrapper">
+                        <!-- [ breadcrumb ] start -->
+                        <div class="page-header">
+                            <div class="page-block">
+                                <div class="row align-items-center">
+                                    <div class="col-md-12">
+                                        <div class="page-header-title">
+                                            <h5 class="m-b-10">To Do</h5>
+                                        </div>
+                                        <ul class="breadcrumb">
+                                            <li class="breadcrumb-item"><a href="index.html"><i
+                                                        class="feather icon-home"></i></a></li>
+                                            <li class="breadcrumb-item"><a href="#!">To Do</a></li>
+                                            <li class="breadcrumb-item"><a href="#!">To Do</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- [ breadcrumb ] end -->
+                        <!-- [ Main Content ] start -->
+                        <div class="row">
+                            <!-- [ Todo-modal ] start -->
+                            <div class="col-sm-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h5>To Do List in Modal</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="tasks-widget">
+                                            <div class="to-do-list mb-3"> 
+                                                <div class="d-inline-block">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input input-primary" type="checkbox" value="" id="flexCheckDefault1">
+                                                        <label class="form-check-label" for="flexCheckDefault1">
+                                                        <span class="custom-control-label ms-0">Lorem Ipsum Dolor Sit
+                                                            Amet</span>
+                                                    </label>
+                                                    </div>
+                                                </div>
+                                                <div class="float-end"><a onclick="delete_todo(8);" href="#!"
+                                                        class="delete_todolist"><i class="far fa-trash-alt"></i></a>
+                                                </div>
+                                            </div>
+                                            <div class="to-do-list mb-3">
+                                                <div class="d-inline-block">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input input-primary" type="checkbox" value="" id="flexCheckDefault2">
+                                                        <label class="form-check-label" for="flexCheckDefault2">
+                                                        <span class="custom-control-label ms-0">Contrary to popular
+                                                            belief</span>
+                                                    </label>
+                                                    </div>
+                                                </div>
+                                                <div class="float-end"><a onclick="delete_todo(9);" href="#!"
+                                                        class="delete_todolist"><i class="far fa-trash-alt"></i></a>
+                                                </div>
+                                            </div>
+                                            <div class="to-do-list mb-3">
+                                                <div class="d-inline-block">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input input-primary" type="checkbox" value="" id="flexCheckDefault3">
+                                                        <label class="form-check-label" for="flexCheckDefault3">
+                                                        <span class="custom-control-label ms-0">Lorem Ipsum Dolor Sit
+                                                            Amet</span>
+                                                            </label>
+                                                        </div>
+                                                </div>
+                                                <div class="float-end"><a onclick="delete_todo(10);" href="#!"
+                                                        class="delete_todolist"><i class="far fa-trash-alt"></i></a>
+                                                </div>
+                                            </div>
+                                            <div class="to-do-list mb-3">
+                                                <div class="d-inline-block">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input input-primary" type="checkbox" value="" id="flexCheckDefault4">
+                                                            <label class="form-check-label" for="flexCheckDefault4">
+                                                          
+                                                        <span class="custom-control-label ms-0">Sed ut perspiciatis unde
+                                                            omnis iste natus</span>
+                                                            </label>
+                                                </div>
+                                                </div>
+                                                <div class="float-end"><a onclick="delete_todo(11);" href="#!"
+                                                        class="delete_todolist"><i class="far fa-trash-alt"></i></a>
+                                                        
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <button class="btn btn-primary btn-add-task m-t-10 btf" type="button"
+                                                data-bs-toggle="modal" data-bs-target="#flipFlop">Add New Tasks</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- [ Todo-modal ] end -->
+                        </div>
+                        <!-- [ Main Content ] end -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- [ modal ] start -->
+<div class="modal fade" id="flipFlop" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="modalLabel">Add new todo</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="form-material">
+                            <div class="right-icon-control">
+                                <form class="form-material">
+                                    <div class="form-group form-primary">
+                                        <input type="text" name="task-insert" class="form-control save_task_todo"
+                                            placeholder="Create your task list" required="">
+                                        <span class="form-bar"></span>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn_save btn btn-primary btf">Save</button>
+                <button type="button" class="btn btn-danger close_btn" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- [ modal ] end -->
+<!-- [ Main Content ] end -->
+
+@@include('./layouts/footer.html')
+@@include('./layouts/footer-bottom-link.html')
+
+<!-- todo js -->
+<script src="assets/plugins/todo/js/todo.js"></script>
+
+</body>
+
+</html>
