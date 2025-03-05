@@ -131,7 +131,7 @@ Route::get('admin/import-excel', [ExcelImportController::class,'index'])->name('
 Route::post('admin/import-excel', [ExcelImportController::class,'import']);
 
 Route::get('admin/', function () {
-    return redirect()->route('admin.products.index');
+    return redirect()->route('products.index');
 });
 Route::resource('admin/products', ProductController::class)->except('show');
 Route::post('admin/products/store', [ProductController::class,'store'])->name('admin.products.store');

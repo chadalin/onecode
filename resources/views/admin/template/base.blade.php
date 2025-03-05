@@ -82,18 +82,21 @@
                                     class="feather icon-layout"></i></span><span class="pcoded-mtext">Page
                                 layouts</span></a>
                         <ul class="pcoded-submenu">
-                            <li class="pcoded-hasmenu active pcoded-trigger"><a href="#!" class="">Vertical</a>
+                            <li class="pcoded-hasmenu active pcoded-trigger"><a href="#!" class="">Работа с прайсом</a>
+                                
+
                                 <ul class="pcoded-submenu">
-                                    <li class=""><a href="layout-static.html" class="" target="_blank">Static</a></li>
-                                    <li class="active"><a href="layout-fixed.html" class="" target="_blank">Fixed</a>
+                                 
+                                    <li class="active"><a href="{{route('importProductIndex')}}" class="" >Загрузить прайс</a>
                                     </li>
-                                    <li class=""><a href="layout-menu-fixed.html" class="" target="_blank">Navbar
-                                            fixed</a></li>
-                                    <li class=""><a href="layout-mini-menu.html" class="" target="_blank">Collapse
-                                            menu</a></li>
-                                    <li class=""><a href="layout-navbg.html" class="" target="_blank">Navbar imagebg</a>
+                                    <li class=""><a href="{{route('products.index')}}" class="" >Список товара</a></li>
+                                    <li class=""><a href="{{route('products.create')}}"class="" >Создать новый</a></li>
+                                    <li class=""><a href="layout-navbg.html" class="" >Добавить категорию</a>
                                     </li>
                                 </ul>
+
+
+
                             </li>
                             <li class=""><a href="layout-horizontal.html" class="" target="_blank">Horizontal</a></li>
                             <li class=""><a href="layout-horizontal-1.html" class="" target="_blank">Horizontal v1</a>
