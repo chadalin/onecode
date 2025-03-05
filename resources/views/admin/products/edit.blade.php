@@ -1,4 +1,4 @@
-@extends('admin.template.app')
+@extends('admin.template.base')
 @section('title', 'Edit Product')
 @section('content')
 
